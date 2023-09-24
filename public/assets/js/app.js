@@ -59,7 +59,7 @@ $(document).ready(() => {
 
         // Populate dummy
         for (let i = 0; i < 30; i++) {
-            addContent("<div style='text-align:center;'>Bem-vindo 🥳🥳🥳</div>");
+            addContent("<div style='text-align:center;'>Deus abencoe sua vida 😇🙏 </div>");
         }
 
         // Load game
@@ -96,8 +96,8 @@ function censor(word) {
     let length = word.length;
     let target = Math.ceil(length / 2);
 
-    let range_start = 2;
-    let range_end = target;
+    let range_start = target - 2;
+    let range_end = target + 1;
 
     for (let i = 0; i < length; i++) {
         let c = word.charAt(i);
@@ -290,7 +290,7 @@ function addPhoto(data, mode) {
     if (mode == "winner") {
         addContent(
             `<div style="text-align:center;font-size: 1.25rem;">
-                <div style='padding-bottom:.25rem;'>Hooray 🎉🎉🎉</div>
+                <div style='padding-bottom:.25rem;'>Acertou 🎉🎉🎉</div>
                 <div style='padding-bottom:.5rem;font-weight: bold;'>`+userName+`</div>
                 <div>
                     <img src="`+userAvatar+`" style="width:128px;height:128px;border-radius: 15px;"/>
@@ -300,7 +300,7 @@ function addPhoto(data, mode) {
     } else {
         addContent(
             `<div style="text-align:center;font-size: 1.25rem;">
-                <div style='padding-bottom:.25rem;'>Thanks for ordering Special Print</div>
+                <div style='padding-bottom:.25rem;'>Obrigada</div>
                 <div style='padding-bottom:.5rem;font-weight: bold;'>`+userName+`</div>
                 <div>
                     <img src="`+userAvatar+`" style="width:128px;height:128px;border-radius: 15px;"/>
@@ -329,7 +329,7 @@ function addGift(data) {
     } else {
         // Add
         addContent(
-            `<div style="text-align:center;font-size: 1.25rem;"><div style='padding-bottom:.5rem;'>Thank you <span style='font-weight: bold;'>`+userName+`!</span></div>
+            `<div style="text-align:center;font-size: 1.25rem;"><div style='padding-bottom:.5rem;'>Obrigada<span style='font-weight: bold;'>`+userName+`!</span></div>
             <div style='font-weight: bold;padding-bottom:.5rem;'><img src="`+giftPictureUrl+`" style="width:32px;height:32px;"/> Sent `+giftName+`</div>
             x`+giftRepeat.toLocaleString()+` worth `+giftTotal.toLocaleString()+` coins!</div>`
         );
@@ -390,7 +390,7 @@ connection.on('member', (data) => {
         // Check setting
         if (confJoin) {
             // Print join
-            addMessage(data, "joined");
+            addMessage(data, "Deus te proteja");
         }
     }, joinMsgDelay);
 })
